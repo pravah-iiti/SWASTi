@@ -6,7 +6,7 @@ MAPTIME_RAW=$(grep "^SWTI_MAP_TIME" swasti.ini | awk -F': ' '{print $2}')
 MAPTIME=$(date -d "$MAPTIME_RAW" +"%Y%m%dT%H%M")
 RUN_MHD=$(grep "^SWTI_RUN_MHD" swasti.ini | awk -F': ' '{print $2}' | tr -d '\r' | xargs)
 output_dir="SWASTi_outputs_${MAPTIME}"
-swasti_image="swasti:v00"
+swasti_image="pravahiiti/swasti:latest"
 
 MAPTIME_=${MAPTIME/T/}
 

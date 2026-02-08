@@ -2,7 +2,7 @@
 
 Space Weather Adaptive Simulation (SWASTi) framework is a three-dimensional physics based heliospheric model intended for space weather analysis and modelling.
 <p align="center">
-<img src=./SWASTI.jpg width="500" height = "550">
+<img src=./SWASTI_no_MI.jpg width="500" height = "550">
 </p>
 
 This system integrates a semi-empirical coronal domain with a PLUTO code-based MHD heliospheric domain ([Mignone et al. 2007](https://doi.org/10.1086/513316)) , enabling simulations from the solar corona to the interplanetary medium. The CME module is incorporated into a self-consistent solar wind background in SWASTi. SWASTi does it using the following steps (1-3 for setting up solar wind and 4th is an optional CME injection.)
