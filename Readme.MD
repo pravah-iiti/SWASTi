@@ -104,7 +104,7 @@ Contains plasma parameters at L1 extracted from the MHD simulation.
 - B2 [nT] Magnetic field component y
 - B3 [nT] Magnetic field component z
 - PRS [nPa] Plasma pressure
-- RHO [$\rm{cm}^{-3}$] Plasma density
+- RHO [ $\rm{cm}^{-3}$ ] Plasma density
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
 
@@ -125,7 +125,7 @@ Shows the temporal evolution of:
 - Scaled plasma density
 - Bulk speed  
 
-in the **ecliptic plane** ($\rm{r}-\phi \rm{plane}$). 
+in the **ecliptic plane** ($\rm{r}-\phi \ \rm{plane}$). 
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
 
@@ -137,7 +137,7 @@ Shows the temporal evolution of:
 - Scaled plasma density
 - Bulk speed  
 
-in the **Meridional plane**, passing through Earth ($\rm{r}-\theta \rm{plane}$).
+in the **Meridional plane**, passing through Earth ($\rm{r}-\theta \ \rm{plane}$).
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
 
