@@ -1,0 +1,22 @@
+# Core scientific stack
+numpy>=1.26
+scipy>=1.11
+astropy>=6.0
+h5py>=3.10
+
+# SunPy ecosystem
+sunpy==7.0.1
+pfsspy>=1.2.0
+streamtracer>=2.5.0
+
+# Plotting / visualization
+matplotlib>=3.8
+
+# Data handling
+pandas>=2.2
+numba>=0.61.2
+
+# Web / scraping (for ADAPT file lists)
+requests>=2.32
+beautifulsoup4>=4.12
+

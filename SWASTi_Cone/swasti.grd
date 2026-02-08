@@ -1,0 +1,76 @@
+[Grid]
+
+X1-grid    1    0.1         150      u    2.1
+X2-grid    1    0.5235987755983  61      u    2.617993877991494
+X3-grid    1    0.0000000000000 181      u    6.283185307179586
+
+[Chombo Refinement]
+
+Levels           4
+Ref_ratio        2 2 2 2 2
+Regrid_interval  2 2 2 2
+Refine_thresh    0.3
+Tag_buffer_size  3
+Block_factor     8
+Max_grid_size    64
+Fill_ratio       0.75
+
+[Time]
+
+CFL              0.3
+CFL_max_var      1.1
+tstop            8.0
+first_dt         1.e-5
+
+[Solver]
+
+Solver         hllc
+
+[Boundary]
+
+X1-beg        userdef
+X1-end        outflow
+X2-beg        reflective
+X2-end        reflective
+X3-beg        periodic
+X3-end        periodic
+
+[Static Grid Output]
+
+uservar    0
+dbl        1  -1   single_file
+flt       -1.0  -1   single_file
+vtk        0.04  -1   single_file
+dbl.h5    -1.0  -1
+flt.h5    -1.0  -1
+tab       -1.0  -1
+ppm       -1.0  -1
+png       -1.0  -1
+log        100
+analysis   0.0005  -1
+
+[Chombo HDF5 output]
+
+Checkpoint_interval  -1.0  0
+Plot_interval         1.0  0
+
+[Particles]
+
+Nparticles          -1     1
+particles_dbl        1.0  -1
+particles_flt       -1.0  -1
+particles_vtk       -1.0  -1
+particles_tab       -1.0  -1
+
+[Parameters]
+
+SWTI_MAP_DATETIME      0.0
+SWTI_Speed_fsw         650.0
+SWTI_Density_fsw       200.0
+SWTI_Pressure_in       6.0
+SWTI_MAP_TIMEPERIOD    16011998.0
+SWTI_CME1_lat          0.0
+SWTI_CME1_lon          0.0
+SWTI_CME1_width        0.0
+SWTI_CME1_speed        0.0
+SWTI_CME1_onset        16011998.0
