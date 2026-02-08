@@ -1,0 +1,39 @@
+name: Build & Push Docker image (Docker Hub)
+
+on:
+  [workflow_dispatch]
+
+env:
+  IMAGE_NAME: swasti
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: pravahiiti
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Docker metadata (tags/labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: pravahiiti/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-,format=short
+          labels: false
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./SWASTi_Cone
+          file: ./SWASTi_Cone/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
