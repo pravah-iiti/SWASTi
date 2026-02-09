@@ -24,7 +24,19 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 <br>
 
-To set up SWASTi, ensure you have **Docker** installed on your system. Then, follow these steps to prepare the environment:
+### Prerequisites
+
+Before proceeding, ensure that **Docker Engine** is installed and running on your system.
+
+* **Check Installation:** Run `docker --version` in your terminal. If the command is not found, install Docker Engine from the [official website](https://docs.docker.com/engine/install/ubuntu/).
+* **Linux Permissions:**
+    > **Note:** If you receive a *'permission denied'* error when running Docker commands, configure your system to run Docker as a non-root user by following [these post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/).
+
+---
+
+### Setup Steps
+
+To set up SWASTi, follow these steps to prepare the environment:
 
 1.  **Pull the Docker Image**
     
