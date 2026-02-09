@@ -90,26 +90,23 @@ The spatial extent of the MHD simulation domain is as follows:
 
 When the MHD simulation is enabled:
 
-3D MHD output files are generated with a time cadence of 6.648 hours.
-Solar wind parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHMM.dat`.
+3D MHD output files are generated with a time cadence of 6.648 hours.  
+Plasma parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHMM.dat`.
 
 <br>
 
 ---
 
-## Solar Wind and CME Background Parameters
+## Solar Wind and CME Parameters
 
 <br>
 
 The fast solar wind speed in the MHD simulation is set equal to the peak WSA speed specified in the swasti.ini file.
 
-The background solar wind density is fixed at $200 \rm{cm}^{−1}$.
-The background thermal pressure is kept constant at 6.0 nPa.
-
-For CME injection:
-
-The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}$.
-The CME temperature at injection is 0.8 MK.
+- The background solar wind density is fixed at $200 \rm{cm}^{−1}$
+- The background thermal pressure is kept constant at $6.0 \rm{nPa}$
+- The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}$
+- The CME temperature at injection is $0.8 \rm{MK}$
 
 <br>
 
@@ -412,9 +409,9 @@ Proper citation is required for any scientific or public use of the simulation o
 
 <br>
 
-For further details, questions, or collaboration related to SWASTi simulations, please contact:
+For further details or collaboration related to SWASTi simulations, please contact:
 
-Dr Bhargav Vaidya  
+Dr. Bhargav Vaidya  
 Pravah Lab  
 Department of Astronomy, Astrophysics and Space Engineering    
 Indian Institute of Technology Indore  
