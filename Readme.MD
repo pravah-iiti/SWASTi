@@ -217,9 +217,9 @@ This document explains each section and parameter in detail.
 
 <br>
 
----
+
 ## `[SWASTi Run]` Section
----
+
 
 <br>
 
@@ -278,9 +278,9 @@ This document explains each section and parameter in detail.
 
 <br>
 
----
+
 ## `[WSA Parameters]` Section
----
+
 <br>
 
 Controls the Wang-Sheeley-Arge (WSA) solar wind speed model.
@@ -328,9 +328,8 @@ $V_{SW} = V_{min} + \frac{V_{max}}{ (1 + f_{s})^\alpha } \times \left[ (1.0-0.8\
 
 <br>
 
----
 ## `[CME Parameters]` Section
----
+
 All the values should be in the Heliocentric Earth Equatorial (HEEQ). The HEEQ coordinate system is a Sun-centered reference frame in which longitude is measured from the Sun-Earth line and latitude is measured relative to the solar equatorial plane. 
 
 <br>
