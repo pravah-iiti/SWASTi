@@ -33,7 +33,22 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 1. **Configure the simulation**
 
-    Edit the `swasti.ini` file as described in the [Configuration Guide](#⚙️-configuration-guide) section below.  
+    Edit the `swasti.ini` file as described in the [Configuration Guide](#⚙️-configuration-guide) section below.
+
+    SWASTi can either use a magnetic field map provided by the user or automatically download the required map from the source. If a map file is not provided, SWASTi will automatically download the appropriate map based on the settings in swasti.ini.
+
+If you want to provide your own map, place the map file in the same directory as swasti.ini. The map file must follow the naming convention:
+
+inputmap_YYYYMMDDHHmm.fts.gz
+
+where:
+
+- inputmap must be either adapt or gong (in lower case) and must match the value of SWTI_INPUT_MAP in swasti.ini
+
+- YYYYMMDDHHmm must exactly match the value of SWTI_MAP_TIME specified in swasti.ini
+
+If the date and time in the map filename do not match *SWTI_INPUT_MAP* AND *SWTI_MAP_TIME*, SWASTi will ignore the local map file and attempt to download the required map automatically.
+
 
 2. **Run SWASTi**
 
@@ -43,13 +58,13 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
     This creates a container named `SWASTi_Run_{TIME}` where TIME is the time of script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
 
-3. **Copy vtk output files from the Docker container**
+3. **Copy files from the Docker container**
 
-    After the run completes, you can copy the generated VTK files to your local system:
+    After the run completes, you can copy the files to your local system:
  
-    `docker cp <container_name>:/app/swasti_run/*.vtk <local_destination>`
+    `docker cp <container_name>:/app/swasti_run/ <local_destination>`
 
-    These vtk files containes the complete 3D outputs from the MHD PLUTO run.
+    These files containes VTK files with the complete 3D outputs from the MHD PLUTO run.
 
 4. **Clean up files**
 
