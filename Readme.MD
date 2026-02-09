@@ -22,8 +22,6 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ## 📦 Installation
 
-<br>
-
 ### Prerequisites
 
 Before proceeding, ensure that **Docker Engine** is installed and running on your system.
