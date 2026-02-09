@@ -77,6 +77,44 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ---
 
+Simulation Domain and Output Details 🌍
+
+<br>
+
+The SWASTi simulation domain extends up to 2.1 AU in the radial direction.
+The spatial extent of the domain is defined as follows:
+
+Radial (r): up to 2.1 AU, with a resolution of 0.013 AU
+Latitude: −60° to +60°, with a resolution of 2°
+Longitude: 0° to 360°, with a resolution of 2°
+
+When the MHD simulation is enabled:
+
+3D MHD output files are generated with a time cadence of 6.648 hours.
+Solar wind parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHMM.dat`.
+
+<br>
+
+---
+
+Solar Wind and CME Background Parameters 🌞☄️
+
+<br>
+
+The fast solar wind speed in the MHD simulation is set equal to the peak WSA speed specified in the swasti.ini file.
+
+The background solar wind density is fixed at $200 \rm{cm}^{−1}$.
+The background thermal pressure is kept constant at 6.0 nPa.
+
+For CME injection:
+
+The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}.
+The CME temperature at injection is 0.8 MK.
+
+<br>
+
+---
+
 ## 📊 Results & Analysis
 
 <br>
@@ -352,5 +390,50 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ---
 
+Citation and Usage Policy 📚
 
+<br>
+
+If you use any data, results, figures, or derived products from these SWASTi simulations
+in publications, presentations, or reports, please cite the following papers:
+
+-[Mayank et al. (2022)](https://doi.org/10.3847/1538-4365/ac8551)
+-[Mayank et al. (2023)](https://doi.org/10.3847/1538-4365/ad08c7)
+-[Mayank et al. (2025)](https://doi.org/10.1007/s12036-025-10107-2)
+
+
+Proper citation is required for any scientific or public use of the simulation outputs.
+
+<br>
+
+---
+
+Contact Information 📧
+
+<br>
+
+For further details, questions, or collaboration related to SWASTi simulations, please contact:
+
+Bhargav Vaidya  
+Department of Astronomy and Astrophysics  
+Indian Institute of Technology Indore  
+
+Email: bvaidya@iiti.ac.in
+
+<br>
+
+---
+
+About Us 🛰️
+
+<br>
+
+The SWASTi codebase and all associated simulation frameworks are developed and
+maintained at `Pravah Lab`, Department of Astronomy, Astrophysics and
+Space Engineering, Indian Institute of Technology Indore (IIT Indore).
+
+Pravah Lab focuses on numerical modeling, heliophysics, space weather,
+and large-scale astrophysical plasma simulations.
+
+---
 
