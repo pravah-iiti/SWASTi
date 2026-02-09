@@ -27,22 +27,27 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 To set up SWASTi, ensure you have **Docker** installed on your system. Then, follow these steps to prepare the environment:
 
 1.  **Pull the Docker Image**
+    
     Retrieve the official SWASTi image from Docker Hub by running:
 
-    `docker pull pravahiiti/swasti:latest
+    `docker pull pravahiiti/swasti:latest`
    
 
 2.  **Download Required Files**
+    
     You need to download two specific files from the [SWASTi GitHub Repository](https://github.com/pravah-iiti/SWASTi) and place them in your working directory:
 
     * `swasti.ini`: The initialization and configuration file.
     * `swasti_run.sh`: The bash script used to load the configuration and execute the simulation within the Docker container.
 
 3.  **Prepare the Script**
+    
     Once the files are downloaded and configured, execute the bash script:
 
-    `bash swasti_run.sh &
-    
+    `bash swasti_run.sh &`
+
+<br>
+
 ---
 
 ## 🚀 How to Run
