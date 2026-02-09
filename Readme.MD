@@ -156,8 +156,8 @@ SWASTi_outputs_YYYYMMDDTHHMM/
 Contains the solar wind parameters obtained from the HUX model run.
 
 **Columns:** 
-- Time [UTC]
-- HUX Velocity [km/s]
+- Time [ $\rm{UTC}$ ]
+- HUX Velocity [ $\rm{km/s}$ ]
 
 <br>
 
@@ -165,14 +165,14 @@ Contains the solar wind parameters obtained from the HUX model run.
 Contains plasma parameters at L1 extracted from the MHD simulation.
 
 **Columns:** 
-- t [$\rm{sec}$] Time since the Start Time as noted in the header
-- V1 [$\rm{km/s}$] Velocity component x
-- V2 [$\rm{km/s}$] Velocity component y
-- V3 [$\rm{km/s}$] Velocity component z
-- B1 [$\rm{nT}$] Magnetic field component x
-- B2 [$\rm{nT}$] Magnetic field component y
-- B3 [$\rm{nT}$] Magnetic field component z
-- PRS [$\rm{nPa}$] Plasma pressure
+- t [ $\rm{sec}$ ] Time since the Start Time as noted in the header
+- V1 [ $\rm{km/s}$ ] Velocity component x
+- V2 [ $\rm{km/s}$ ] Velocity component y
+- V3 [ $\rm{km/s}$ ] Velocity component z
+- B1 [ $\rm{nT}$ ] Magnetic field component x
+- B2 [ $\rm{nT}$ ] Magnetic field component y
+- B3 [ $\rm{nT}$ ] Magnetic field component z
+- PRS [ $\rm{nPa}$ ] Plasma pressure
 - RHO [ $\rm{cm}^{-3}$ ] Plasma density
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
