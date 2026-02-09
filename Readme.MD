@@ -27,6 +27,23 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ---
 
+## Contributors
+
+<br>
+
+- Dr Bhargav Vaidya (PI Pravah lab, IIT Indore)
+- Dr Argyadeep Paul (Post doctrol fellow, Université Paris-Saclay)
+- Dr Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)
+- Jithu J Athalathil (PhD Pravah lab, IIT Indore)
+- Sirsha Nandy (PhD Pravah lab, IIT Indore)
+- Asif Mohamed Mandayapuram (PhD Pravah lab, IIT Indore and Scientist SAC,ISRO)
+- Aniket Sharma (PhD Pravah lab, IIT Indore)
+- Navanit A V (MSc Pravah Lab, IIT Indore)
+
+<br>
+
+---
+
 ## 🚀 How to Run
 
 <br>
