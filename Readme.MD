@@ -56,6 +56,25 @@ To set up SWASTi, follow these steps to prepare the environment:
 
 ---
 
+## Contributors
+
+<br>
+
+- PI : Dr. Bhargav Vaidya (PI Pravah lab, IIT Indore)
+- Developer : Dr. Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)  
+
+  **Contributors**  
+- Dr. Argyadeep Paul (Post-doc fellow, Université Paris-Saclay)
+- Jithu J Athalathil (PhD Pravah lab, IIT Indore)
+- Navanit A V (MSc Pravah lab, IIT Indore)
+- Sirsha Nandy (PhD Pravah lab, IIT Indore)
+- Aniket Sharma (PhD Pravah lab, IIT Indore)
+- Asif Mohamed Mandayapuram (PhD Pravah lab, IIT Indore and Scientist SAC,ISRO)
+
+<br>
+
+---
+
 ## 🚀 How to Run
 
 <br>
@@ -63,6 +82,21 @@ To set up SWASTi, follow these steps to prepare the environment:
 1. **Configure the simulation**
 
     Edit the `swasti.ini` file as described in the [Configuration Guide](https://github.com/pravah-iiti/SWASTi/tree/main#%EF%B8%8F-configuration-guide) section below.  
+  
+    SWASTi can either use a magnetic field map provided by the user or automatically download the required map from the source. If a map file is not provided, SWASTi will automatically download the appropriate map based on the settings in swasti.ini.
+    
+    If you want to provide your own map, place the map file in the same directory as swasti.ini. The map file must follow the naming convention:
+
+    inputmap_YYYYMMDDHHmm.fts.gz
+
+    where:
+
+        - inputmap must be either adapt or gong (in lower case) and must match the value of SWTI_INPUT_MAP in swasti.ini
+
+        - YYYYMMDDHHmm must exactly match the value of SWTI_MAP_TIME specified in swasti.ini
+
+    If the date and time in the map filename do not match *SWTI_INPUT_MAP* AND *SWTI_MAP_TIME*, SWASTi will ignore the local map file and attempt to download the required map automatically.
+
 
 2. **Run SWASTi**
 
@@ -72,13 +106,13 @@ To set up SWASTi, follow these steps to prepare the environment:
 
     This creates a container named `SWASTi_Run_{TIME}` where TIME is the start time of the script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
 
-3. **Copy vtk output files from the Docker container**
+3. **Copy files from the Docker container**
 
-    After the run completes, you can copy the generated VTK files to your local system:
+    After the run completes, you can copy the files to your local system:
  
-    `docker cp <container_name>:/app/swasti_run/*.vtk <local_destination>`
+    `docker cp <container_name>:/app/swasti_run/ <local_destination>`
 
-    These vtk files contain the complete 3D outputs from the MHD PLUTO run.
+    These files containes VTK files with the complete 3D outputs from the MHD PLUTO run.
 
 4. **Clean up files**
 
@@ -86,6 +120,41 @@ To set up SWASTi, follow these steps to prepare the environment:
  
     `docker rm <container_name>`
 
+
+<br>
+
+---
+
+## Simulation Domain and Output Details 
+
+<br>
+
+The SWASTi simulation domain extends up to 2.1 AU in the radial direction.  
+
+The spatial extent of the MHD simulation domain is as follows:
+- Radial: 0.1 to 2.1 AU, with 150 grids
+- Latitude: −60° to +60°, with a resolution of 2°
+- Longitude: 0° to 360°, with a resolution of 2°
+
+When the MHD simulation is enabled:
+
+3D MHD output files are generated with a time cadence of 6.648 hours.  
+Plasma parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHMM.dat`.
+
+<br>
+
+---
+
+## Solar Wind and CME Parameters
+
+<br>
+
+The fast solar wind speed in the MHD simulation is set equal to the peak WSA speed specified in the swasti.ini file.
+
+- The background solar wind density is fixed at $200 \rm{cm}^{−1}$
+- The background thermal pressure is kept constant at $6.0 \rm{nPa}$
+- The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}$
+- The CME temperature at injection is $0.8 \rm{MK}$
 
 <br>
 
@@ -116,8 +185,8 @@ SWASTi_outputs_YYYYMMDDTHHmm/
 Contains the solar wind parameters obtained from the HUX model run.
 
 **Columns:** 
-- Time [UTC]
-- HUX Velocity [km/s]
+- Time [ $\rm{UTC}$ ]
+- HUX Velocity [ $\rm{km/s}$ ]
 
 <br>
 
@@ -125,14 +194,14 @@ Contains the solar wind parameters obtained from the HUX model run.
 Contains plasma parameters at L1 extracted from the MHD simulation.
 
 **Columns:** 
-- t [sec] Time since the Start Time as noted in the filheader
-- V1 [km/s] Velocity component x
-- V2 [km/s] Velocity component y
-- V3 [km/s] Velocity component z
-- B1 [nT] Magnetic field component x
-- B2 [nT] Magnetic field component y
-- B3 [nT] Magnetic field component z
-- PRS [nPa] Plasma pressure
+- t [ $\rm{sec}$ ] Time since the Start Time as noted in the header
+- V1 [ $\rm{km/s}$ ] Velocity component x
+- V2 [ $\rm{km/s}$ ] Velocity component y
+- V3 [ $\rm{km/s}$ ] Velocity component z
+- B1 [ $\rm{nT}$ ] Magnetic field component x
+- B2 [ $\rm{nT}$ ] Magnetic field component y
+- B3 [ $\rm{nT}$ ] Magnetic field component z
+- PRS [ $\rm{nPa}$ ] Plasma pressure
 - RHO [ $\rm{cm}^{-3}$ ] Plasma density
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
@@ -195,9 +264,9 @@ This document explains each section and parameter in detail.
 
 <br>
 
----
+
 ## `[SWASTi Run]` Section
----
+
 
 <br>
 
@@ -256,9 +325,9 @@ This document explains each section and parameter in detail.
 
 <br>
 
----
+
 ## `[WSA Parameters]` Section
----
+
 <br>
 
 Controls the Wang-Sheeley-Arge (WSA) solar wind speed model.
@@ -306,9 +375,8 @@ $V_{SW} = V_{min} + \frac{V_{max}}{ (1 + f_{s})^\alpha } \times \left[ (1.0-0.8\
 
 <br>
 
----
 ## `[CME Parameters]` Section
----
+
 All the values should be in the Heliocentric Earth Equatorial (HEEQ). The HEEQ coordinate system is a Sun-centered reference frame in which longitude is measured from the Sun-Earth line and latitude is measured relative to the solar equatorial plane. 
 
 <br>
@@ -365,5 +433,51 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ---
 
+## ©️ Citation and Usage Policy 
 
+<br>
+
+If you use any data, results, figures, or derived products from these SWASTi simulations
+in publications, presentations, or reports, please cite the following papers:
+
+- [Mayank et al. (2022)](https://doi.org/10.3847/1538-4365/ac8551)
+- [Mayank et al. (2023)](https://doi.org/10.3847/1538-4365/ad08c7)
+- [Mayank et al. (2025)](https://doi.org/10.1007/s12036-025-10107-2)
+
+
+Proper citation is required for any scientific or public use of the simulation outputs.
+
+<br>
+
+---
+
+## 📧 Contact Information 
+
+<br>
+
+For further details or collaboration related to SWASTi simulations, please contact:
+
+Dr. Bhargav Vaidya  
+Pravah Lab  
+Department of Astronomy, Astrophysics and Space Engineering    
+Indian Institute of Technology Indore  
+
+Email: bvaidya@iiti.ac.in
+
+<br>
+
+---
+
+## About Us 
+
+<br>
+
+The SWASTi codebase and all associated simulation frameworks are developed and
+maintained at `Pravah Lab`, Department of Astronomy, Astrophysics and
+Space Engineering, Indian Institute of Technology Indore (IIT Indore).
+
+Pravah Lab focuses on numerical modeling of astrophysical jets, heliophysics, space weather,
+and astrophysical plasma simulations.
+
+---
 

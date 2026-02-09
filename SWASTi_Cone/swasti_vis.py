@@ -92,6 +92,8 @@ def create_gif(TP, t_start):
             time_sec = (j * time_factor) - TP
             if time_sec <= 0:
                 continue
+            elif time_sec>TP:
+                continue
 
             current_time = t_start + timedelta(seconds=time_sec)
             time_str = current_time.strftime("%d/%m/%Y %H:%M:%S")
@@ -112,7 +114,7 @@ def create_gif(TP, t_start):
             fig.add_artist(AnnotationBbox(OffsetImage(logo, zoom=0.15),(0.07, 0.9), xycoords='figure fraction', frameon=False))
 
             buf = BytesIO()
-            plt.savefig(buf, format='png', dpi=300)
+            plt.savefig(buf, format='png', dpi=125)
             buf.seek(0)
             writer_rphi.append_data(iio.imread(buf))
             plt.close(fig)
@@ -137,7 +139,7 @@ def create_gif(TP, t_start):
             fig.add_artist(AnnotationBbox(OffsetImage(logo, zoom=0.15),(0.07, 0.9), xycoords='figure fraction', frameon=False))
 
             buf = BytesIO()
-            plt.savefig(buf, format='png', dpi=300)
+            plt.savefig(buf, format='png', dpi=125)
             buf.seek(0)
             writer_rtheta.append_data(iio.imread(buf))
             plt.close(fig)
