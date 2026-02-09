@@ -24,7 +24,25 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 <br>
 
+To set up SWASTi, ensure you have **Docker** installed on your system. Then, follow these steps to prepare the environment:
 
+1.  **Pull the Docker Image**
+    Retrieve the official SWASTi image from Docker Hub by running:
+
+    `docker pull pravahiiti/swasti:latest
+   
+
+2.  **Download Required Files**
+    You need to download two specific files from the [SWASTi GitHub Repository](https://github.com/pravah-iiti/SWASTi) and place them in your working directory:
+
+    * `swasti.ini`: The initialization and configuration file.
+    * `swasti_run.sh`: The bash script used to load the configuration and execute the simulation within the Docker container.
+
+3.  **Prepare the Script**
+    Once the files are downloaded and configured, execute the bash script:
+
+    `bash swasti_run.sh &
+    
 ---
 
 ## 🚀 How to Run
@@ -41,7 +59,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
   
     `bash ./swasti_run.sh &`
 
-    This creates a container named `SWASTi_Run_{TIME}` where TIME is the time of script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
+    This creates a container named `SWASTi_Run_{TIME}` where TIME is the start time of the script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
 
 3. **Copy vtk output files from the Docker container**
 
@@ -49,7 +67,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
  
     `docker cp <container_name>:/app/swasti_run/*.vtk <local_destination>`
 
-    These vtk files containes the complete 3D outputs from the MHD PLUTO run.
+    These vtk files contain the complete 3D outputs from the MHD PLUTO run.
 
 4. **Clean up files**
 
@@ -69,9 +87,9 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 All simulation outputs are written to a timestamped directory named: **`SWASTi_outputs_{SWTI_MAP_TIME}`**, where the value of *SWTI_MAP_TIME* is as specified in *swasti.ini*.
 
 ```text
-SWASTi_outputs_YYYYMMDDTHHMM/
+SWASTi_outputs_YYYYMMDDTHHmm/
 ├── 📄 HuX_result.out                   # HUX model output
-├── 📄 PlasmaParam_L1_YYYYMMDDHHMM.dat  # MHD plasma parameters at L1
+├── 📄 PlasmaParam_L1_YYYYMMDDHHmm.dat  # MHD plasma parameters at L1
 ├── 🖼️ Analysis.png                     # Time series at Earth (V, ρ, B)
 ├── 🎞️ SWASTI_MHD_rphi.gif              # Ecliptic plane evolution
 ├── 🎞️ SWASTI_MHD_rtheta.gif            # Meridional plane evolution
@@ -92,11 +110,11 @@ Contains the solar wind parameters obtained from the HUX model run.
 
 <br>
 
-### `PlasmaParam_L1_YYYYMMDDHHMM.dat`
+### `PlasmaParam_L1_YYYYMMDDHHmm.dat`
 Contains plasma parameters at L1 extracted from the MHD simulation.
 
 **Columns:** 
-- t [sec] Time since the Start Time as noted in the header
+- t [sec] Time since the Start Time as noted in the filheader
 - V1 [km/s] Velocity component x
 - V2 [km/s] Velocity component y
 - V3 [km/s] Velocity component z
@@ -111,7 +129,6 @@ Contains plasma parameters at L1 extracted from the MHD simulation.
 <br>
 
 ### `Analysis.png`
-Provides time series plots the following data at Earth location as per the *PlasmaParam_L1_YYYYMMDDHHMM.dat* file:
 - Solar wind bulk speed
 - Plasma density
 - Magnetic field components
@@ -186,7 +203,7 @@ This document explains each section and parameter in detail.
 
 ### **SWTI_MAP_TIME**: 
 
-**Format:** `YYYY-MM-DD HH:MM`
+**Format:** `YYYY-MM-DD HH:mm`
 
 **Behavior:**
 
@@ -329,7 +346,7 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ### **SWTI_CME_onset**:
 
-**Format:** `YYYY-MM-DD HH:MM`
+**Format:** `YYYY-MM-DD HH:mm`
 
 **Description:** CME injection time at **21.5 solar radii** 
 
