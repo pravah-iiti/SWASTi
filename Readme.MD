@@ -77,16 +77,16 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ---
 
-Simulation Domain and Output Details 🌍
+## 🌍 Simulation Domain and Output Details 
 
 <br>
 
-The SWASTi simulation domain extends up to 2.1 AU in the radial direction.
-The spatial extent of the domain is defined as follows:
+The SWASTi simulation domain extends up to 2.1 AU in the radial direction.  
 
-Radial (r): up to 2.1 AU, with a resolution of 0.013 AU
-Latitude: −60° to +60°, with a resolution of 2°
-Longitude: 0° to 360°, with a resolution of 2°
+The spatial extent of the MHD simulation domain is as follows:
+- Radial (r): 0.1 to 2.1 AU, with 150 grids
+- Latitude: −60° to +60°, with a resolution of 2°
+- Longitude: 0° to 360°, with a resolution of 2°
 
 When the MHD simulation is enabled:
 
@@ -97,7 +97,7 @@ Solar wind parameters extracted at the L1 point are saved with a cadence of 5 mi
 
 ---
 
-Solar Wind and CME Background Parameters 🌞☄️
+## Solar Wind and CME Background Parameters
 
 <br>
 
@@ -390,7 +390,7 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ---
 
-Citation and Usage Policy 📚
+## 📚 Citation and Usage Policy 
 
 <br>
 
@@ -408,14 +408,15 @@ Proper citation is required for any scientific or public use of the simulation o
 
 ---
 
-Contact Information 📧
+## 📧 Contact Information 
 
 <br>
 
 For further details, questions, or collaboration related to SWASTi simulations, please contact:
 
-Bhargav Vaidya  
-Department of Astronomy and Astrophysics  
+Dr Bhargav Vaidya  
+Pravah Lab  
+Department of Astronomy, Astrophysics and Space Engineering    
 Indian Institute of Technology Indore  
 
 Email: bvaidya@iiti.ac.in
@@ -424,7 +425,7 @@ Email: bvaidya@iiti.ac.in
 
 ---
 
-About Us 🛰️
+## 🛰️ About Us 
 
 <br>
 
@@ -432,8 +433,8 @@ The SWASTi codebase and all associated simulation frameworks are developed and
 maintained at `Pravah Lab`, Department of Astronomy, Astrophysics and
 Space Engineering, Indian Institute of Technology Indore (IIT Indore).
 
-Pravah Lab focuses on numerical modeling, heliophysics, space weather,
-and large-scale astrophysical plasma simulations.
+Pravah Lab focuses on numerical modeling of astrophysical jets, heliophysics, space weather,
+and astrophysical plasma simulations.
 
 ---
 
