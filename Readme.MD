@@ -34,7 +34,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 - PI : Dr Bhargav Vaidya (Pravah lab, IIT Indore)
 - Developer : Dr Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)  
 
-  Contributors  
+  **Contributors**  
 - Dr Argyadeep Paul (Post doctrol fellow, Université Paris-Saclay)
 - Jithu J Athalathil (PhD Pravah lab, IIT Indore)
 - Navanit A V (MSc Pravah Lab, IIT Indore)
