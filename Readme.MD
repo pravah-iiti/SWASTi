@@ -50,12 +50,6 @@ To set up SWASTi, follow these steps to prepare the environment:
     * `swasti.ini`: The initialization and configuration file.
     * `swasti_run.sh`: The bash script used to load the configuration and execute the simulation within the Docker container.
 
-3.  **Prepare the Script**
-    
-    Once the files are downloaded and configured, execute the bash script:
-
-    `bash swasti_run.sh &`
-
 <br>
 
 ---
@@ -66,7 +60,7 @@ To set up SWASTi, follow these steps to prepare the environment:
 
 1. **Configure the simulation**
 
-    Edit the `swasti.ini` file as described in the [Configuration Guide](#⚙️-configuration-guide) section below.  
+    Edit the `swasti.ini` file as described in the [Configuration Guide](#-configuration-guide) section below.  
 
 2. **Run SWASTi**
 
