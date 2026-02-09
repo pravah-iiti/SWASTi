@@ -108,7 +108,7 @@ The background thermal pressure is kept constant at 6.0 nPa.
 
 For CME injection:
 
-The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}.
+The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}$.
 The CME temperature at injection is 0.8 MK.
 
 <br>
