@@ -22,8 +22,37 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ## 📦 Installation
 
-<br>
+⚠️ **Platform Compatibility:** Currently, **SWASTi is only compatible with Linux-based systems**.
 
+### Prerequisites
+
+Before proceeding, ensure that **Docker Engine** is installed and running on your system.
+
+* **Check Installation:** Run `docker --version` in your terminal. If the command is not found, install Docker Engine from the [official website](https://docs.docker.com/engine/install/ubuntu/).
+* **Linux Permissions:**
+    > **Note:** If you receive a *'permission denied'* error when running Docker commands, configure your system to run Docker as a non-root user by following [these post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/).
+
+---
+
+### Setup Steps
+
+To set up SWASTi, follow these steps to prepare the environment:
+
+1.  **Pull the Docker Image**
+    
+    Retrieve the official SWASTi image from Docker Hub by running:
+
+    `docker pull pravahiiti/swasti:latest`
+   
+
+2.  **Download Required Files**
+    
+    You need to download two specific files from the [SWASTi GitHub Repository](https://github.com/pravah-iiti/SWASTi) and place them in your working directory:
+
+    * `swasti.ini`: The initialization and configuration file.
+    * `swasti_run.sh`: The bash script used to load the configuration and execute the simulation within the Docker container.
+
+<br>
 
 ---
 
@@ -52,8 +81,8 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 1. **Configure the simulation**
 
-    Edit the `swasti.ini` file as described in the [Configuration Guide](#⚙️-configuration-guide) section below.
-
+    Edit the `swasti.ini` file as described in the [Configuration Guide](https://github.com/pravah-iiti/SWASTi/tree/main#%EF%B8%8F-configuration-guide) section below.  
+  
     SWASTi can either use a magnetic field map provided by the user or automatically download the required map from the source. If a map file is not provided, SWASTi will automatically download the appropriate map based on the settings in swasti.ini.
     
     If you want to provide your own map, place the map file in the same directory as swasti.ini. The map file must follow the naming convention:
@@ -75,7 +104,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
   
     `bash ./swasti_run.sh &`
 
-    This creates a container named `SWASTi_Run_{TIME}` where TIME is the time of script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
+    This creates a container named `SWASTi_Run_{TIME}` where TIME is the start time of the script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
 
 3. **Copy files from the Docker container**
 
@@ -138,9 +167,9 @@ The fast solar wind speed in the MHD simulation is set equal to the peak WSA spe
 All simulation outputs are written to a timestamped directory named: **`SWASTi_outputs_{SWTI_MAP_TIME}`**, where the value of *SWTI_MAP_TIME* is as specified in *swasti.ini*.
 
 ```text
-SWASTi_outputs_YYYYMMDDTHHMM/
+SWASTi_outputs_YYYYMMDDTHHmm/
 ├── 📄 HuX_result.out                   # HUX model output
-├── 📄 PlasmaParam_L1_YYYYMMDDHHMM.dat  # MHD plasma parameters at L1
+├── 📄 PlasmaParam_L1_YYYYMMDDHHmm.dat  # MHD plasma parameters at L1
 ├── 🖼️ Analysis.png                     # Time series at Earth (V, ρ, B)
 ├── 🎞️ SWASTI_MHD_rphi.gif              # Ecliptic plane evolution
 ├── 🎞️ SWASTI_MHD_rtheta.gif            # Meridional plane evolution
@@ -161,7 +190,7 @@ Contains the solar wind parameters obtained from the HUX model run.
 
 <br>
 
-### `PlasmaParam_L1_YYYYMMDDHHMM.dat`
+### `PlasmaParam_L1_YYYYMMDDHHmm.dat`
 Contains plasma parameters at L1 extracted from the MHD simulation.
 
 **Columns:** 
@@ -180,7 +209,6 @@ Contains plasma parameters at L1 extracted from the MHD simulation.
 <br>
 
 ### `Analysis.png`
-Provides time series plots the following data at Earth location as per the *PlasmaParam_L1_YYYYMMDDHHMM.dat* file:
 - Solar wind bulk speed
 - Plasma density
 - Magnetic field components
@@ -255,7 +283,7 @@ This document explains each section and parameter in detail.
 
 ### **SWTI_MAP_TIME**: 
 
-**Format:** `YYYY-MM-DD HH:MM`
+**Format:** `YYYY-MM-DD HH:mm`
 
 **Behavior:**
 
@@ -397,7 +425,7 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ### **SWTI_CME_onset**:
 
-**Format:** `YYYY-MM-DD HH:MM`
+**Format:** `YYYY-MM-DD HH:mm`
 
 **Description:** CME injection time at **21.5 solar radii** 
 
