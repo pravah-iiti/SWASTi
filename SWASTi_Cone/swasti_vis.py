@@ -92,6 +92,8 @@ def create_gif(TP, t_start):
             time_sec = (j * time_factor) - TP
             if time_sec <= 0:
                 continue
+            elif time_sec>TP:
+                continue
 
             current_time = t_start + timedelta(seconds=time_sec)
             time_str = current_time.strftime("%d/%m/%Y %H:%M:%S")
