@@ -60,7 +60,7 @@ To set up SWASTi, follow these steps to prepare the environment:
 
 1. **Configure the simulation**
 
-    Edit the `swasti.ini` file as described in the [Configuration Guide](#-configuration-guide) section below.  
+    Edit the `swasti.ini` file as described in the [Configuration Guide](https://github.com/pravah-iiti/SWASTi/tree/main#%EF%B8%8F-configuration-guide) section below.  
 
 2. **Run SWASTi**
 
