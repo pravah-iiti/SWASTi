@@ -394,9 +394,9 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 If you use any data, results, figures, or derived products from these SWASTi simulations
 in publications, presentations, or reports, please cite the following papers:
 
--[Mayank et al. (2022)](https://doi.org/10.3847/1538-4365/ac8551)
--[Mayank et al. (2023)](https://doi.org/10.3847/1538-4365/ad08c7)
--[Mayank et al. (2025)](https://doi.org/10.1007/s12036-025-10107-2)
+- [Mayank et al. (2022)](https://doi.org/10.3847/1538-4365/ac8551)
+- [Mayank et al. (2023)](https://doi.org/10.3847/1538-4365/ad08c7)
+- [Mayank et al. (2025)](https://doi.org/10.1007/s12036-025-10107-2)
 
 
 Proper citation is required for any scientific or public use of the simulation outputs.
