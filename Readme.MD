@@ -77,7 +77,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ---
 
-## 🌍 Simulation Domain and Output Details 
+## Simulation Domain and Output Details 
 
 <br>
 
@@ -387,7 +387,7 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 
 ---
 
-## 📚 Citation and Usage Policy 
+## ©️ Citation and Usage Policy 
 
 <br>
 
@@ -422,7 +422,7 @@ Email: bvaidya@iiti.ac.in
 
 ---
 
-## 🛰️ About Us 
+## About Us 
 
 <br>
 
