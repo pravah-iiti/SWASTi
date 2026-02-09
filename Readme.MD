@@ -31,13 +31,13 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 <br>
 
-- PI : Dr. Bhargav Vaidya (Pravah lab, IIT Indore)
+- PI : Dr. Bhargav Vaidya (PI Pravah lab, IIT Indore)
 - Developer : Dr. Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)  
 
   **Contributors**  
-- Dr. Argyadeep Paul (Post doctrol fellow, Université Paris-Saclay)
+- Dr. Argyadeep Paul (Post-doc fellow, Université Paris-Saclay)
 - Jithu J Athalathil (PhD Pravah lab, IIT Indore)
-- Navanit A V (MSc Pravah Lab, IIT Indore)
+- Navanit A V (MSc Pravah lab, IIT Indore)
 - Sirsha Nandy (PhD Pravah lab, IIT Indore)
 - Aniket Sharma (PhD Pravah lab, IIT Indore)
 - Asif Mohamed Mandayapuram (PhD Pravah lab, IIT Indore and Scientist SAC,ISRO)
@@ -103,7 +103,7 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 The SWASTi simulation domain extends up to 2.1 AU in the radial direction.  
 
 The spatial extent of the MHD simulation domain is as follows:
-- Radial (r): 0.1 to 2.1 AU, with 150 grids
+- Radial: 0.1 to 2.1 AU, with 150 grids
 - Latitude: −60° to +60°, with a resolution of 2°
 - Longitude: 0° to 360°, with a resolution of 2°
 
@@ -165,14 +165,14 @@ Contains the solar wind parameters obtained from the HUX model run.
 Contains plasma parameters at L1 extracted from the MHD simulation.
 
 **Columns:** 
-- t [sec] Time since the Start Time as noted in the header
-- V1 [km/s] Velocity component x
-- V2 [km/s] Velocity component y
-- V3 [km/s] Velocity component z
-- B1 [nT] Magnetic field component x
-- B2 [nT] Magnetic field component y
-- B3 [nT] Magnetic field component z
-- PRS [nPa] Plasma pressure
+- t [$\rm{sec}$] Time since the Start Time as noted in the header
+- V1 [$\rm{km/s}$] Velocity component x
+- V2 [$\rm{km/s}$] Velocity component y
+- V3 [$\rm{km/s}$] Velocity component z
+- B1 [$\rm{nT}$] Magnetic field component x
+- B2 [$\rm{nT}$] Magnetic field component y
+- B3 [$\rm{nT}$] Magnetic field component z
+- PRS [$\rm{nPa}$] Plasma pressure
 - RHO [ $\rm{cm}^{-3}$ ] Plasma density
 
 ⚠️ The file is generated only if *SWTI_RUN_MHD* = *YES*.
