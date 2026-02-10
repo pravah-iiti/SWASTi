@@ -139,7 +139,7 @@ The spatial extent of the MHD simulation domain is as follows:
 When the MHD simulation is enabled:
 
 3D MHD output files are generated with a time cadence of 6.648 hours.  
-Plasma parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHMM.dat`.
+Plasma parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHmm.dat`.
 
 <br>
 
