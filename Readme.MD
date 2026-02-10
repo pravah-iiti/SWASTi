@@ -20,6 +20,25 @@ This system integrates a semi-empirical coronal domain with a PLUTO code-based M
 
 ---
 
+## Contributors
+
+<br>
+
+- PI : Dr. Bhargav Vaidya (PI Pravah lab, IIT Indore)
+- Developer : Dr. Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)  
+
+  **Contributors**  
+- Dr. Argyadeep Paul (Post-doc fellow, Université Paris-Saclay)
+- Jithu J Athalathil (PhD Pravah lab, IIT Indore)
+- Navanit A V (MSc Pravah lab, IIT Indore)
+- Sirsha Nandy (PhD Pravah lab, IIT Indore)
+- Aniket Sharma (PhD Pravah lab, IIT Indore)
+- Asif Mohamed Mandayapuram (PhD Pravah lab, IIT Indore and Scientist SAC,ISRO)
+
+<br>
+
+---
+
 ## 📦 Installation
 
 ⚠️ **Platform Compatibility:** Currently, **SWASTi is only compatible with Linux-based systems**.
@@ -56,25 +75,6 @@ To set up SWASTi, follow these steps to prepare the environment:
 
 ---
 
-## Contributors
-
-<br>
-
-- PI : Dr. Bhargav Vaidya (PI Pravah lab, IIT Indore)
-- Developer : Dr. Prateek Mayank (NASA Jack Eddy Postdoctoral Fellow at UCAR CPAESS & SWx TREC, University of Colorado Boulder)  
-
-  **Contributors**  
-- Dr. Argyadeep Paul (Post-doc fellow, Université Paris-Saclay)
-- Jithu J Athalathil (PhD Pravah lab, IIT Indore)
-- Navanit A V (MSc Pravah lab, IIT Indore)
-- Sirsha Nandy (PhD Pravah lab, IIT Indore)
-- Aniket Sharma (PhD Pravah lab, IIT Indore)
-- Asif Mohamed Mandayapuram (PhD Pravah lab, IIT Indore and Scientist SAC,ISRO)
-
-<br>
-
----
-
 ## 🚀 How to Run
 
 <br>
@@ -105,6 +105,8 @@ To set up SWASTi, follow these steps to prepare the environment:
     `bash ./swasti_run.sh &`
 
     This creates a container named `SWASTi_Run_{TIME}` where TIME is the start time of the script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
+    
+    The SWASTi run log file is available in the main directory. If `SWTI_RUN_MHD = YES`, the corresponding MHD log file will be available in the `outputs` directory.
 
 3. **Copy files from the Docker container**
 
