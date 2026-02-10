@@ -151,7 +151,7 @@ Plasma parameters extracted at the L1 point are saved with a cadence of 5 minute
 
 The fast solar wind speed in the MHD simulation is set equal to the peak WSA speed specified in the swasti.ini file.
 
-- The background solar wind density is fixed at $200 \rm{cm}^{−1}$
+- The background solar wind plasma number density is fixed at $200 \rm{cm}^{−1}$
 - The background thermal pressure is kept constant at $6.0 \rm{nPa}$
 - The CME density at injection is set to $2.0 \times 10^{-21} \rm{gcm}^{-3}$
 - The CME temperature at injection is $0.8 \rm{MK}$
