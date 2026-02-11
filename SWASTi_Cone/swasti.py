@@ -147,7 +147,7 @@ class swasti:
                         if '.' in value_:value_ = float(value_)
                         else:value_ = int(value_)
                     current_dict_[key_] = value_
-			self.cme_inputs['SWTI_CME_lat']+=90
+            self.cme_inputs['SWTI_CME_lat']+=90
    
     def get_map_data(self):
     	if self.swasti_run['SWTI_INPUT_MAP'] =='ADAPT':
