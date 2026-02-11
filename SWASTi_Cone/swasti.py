@@ -147,9 +147,10 @@ class swasti:
                         if '.' in value_:value_ = float(value_)
                         else:value_ = int(value_)
                     current_dict_[key_] = value_
+			self.cme_inputs['SWTI_CME_lat']+=90
    
     def get_map_data(self):
-    	if S.swasti_run['SWTI_INPUT_MAP'] =='ADAPT':
+    	if self.swasti_run['SWTI_INPUT_MAP'] =='ADAPT':
     	    given_date_ = datetime.strptime(self.swasti_run['SWTI_MAP_TIME'], "%Y-%m-%d %H:%M")
     	    adaptCR_year_ = given_date_.year
     	    self.CR_time_ = given_date_.strftime("%Y%m%d%H%M") 
@@ -182,7 +183,7 @@ class swasti:
     	            else:
     	                print("Failed to download the Central meridian magnetogram from all URLs.")  
 		         
-    	elif S.swasti_run['SWTI_INPUT_MAP'] =='GONG':
+    	elif self.swasti_run['SWTI_INPUT_MAP'] =='GONG':
     	    given_date_ = datetime.strptime(self.swasti_run['SWTI_MAP_TIME'], "%Y-%m-%d %H:%M")
     	    cr_number = sunpy.coordinates.sun.carrington_rotation_number(given_date_) 
     	    self.cr = int(cr_number)
@@ -208,7 +209,7 @@ class swasti:
     	    exit()
             
     def process_map_data(self):
-    	if S.swasti_run['SWTI_INPUT_MAP'] =='ADAPT':
+    	if self.swasti_run['SWTI_INPUT_MAP'] =='ADAPT':
             adapt_fits_ = fits.open(self.mg_fname)
             data_header_pairs_ = [(map_slice, adapt_fits_[0].header) for map_slice in adapt_fits_[0].data]
             mid_cr_ = adapt_fits_[0].header['MAPCR']
@@ -222,7 +223,7 @@ class swasti:
                 adaptMapseq_.append(map_scrh_)
             aMap_car_ = adaptMapseq_[6]
             self.input_map = pfsspy.utils.car_to_cea(aMap_car_, method='interp') # This is ADAPT Input Map required for PFSSPY
-    	elif S.swasti_run['SWTI_INPUT_MAP'] =='GONG':
+    	elif self.swasti_run['SWTI_INPUT_MAP'] =='GONG':
             gong_map = sunpy.map.Map(self.mg_fname)
             mid_cr_ = gong_map.meta.get('CRCENTER', 'Default Value')
             end_cr_ = gong_map.meta.get('CREDGE', 'Default Value')
