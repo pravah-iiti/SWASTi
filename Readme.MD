@@ -1,6 +1,6 @@
 # 🌞 **SWASTi**
 
-Space Weather Adaptive Simulation (SWASTi) framework is a three-dimensional physics based heliospheric model intended for space weather analysis and modelling.
+Space Weather Adaptive SimulaTion (SWASTi) framework is a three-dimensional physics based heliospheric model intended for space weather analysis and modelling.
 <p align="center">
 <img src=./SWASTI.jpg width="500" height = "550">
 </p>
@@ -87,13 +87,13 @@ To set up SWASTi, follow these steps to prepare the environment:
     
     If you want to provide your own map, place the map file in the same directory as swasti.ini. The map file must follow the naming convention:
 
-    inputmap_YYYYMMDDHHmm.fts.gz
+    <inputmap>_<YYYYMMDDHHmm>.<extension>.gz
 
     where:
 
-        - inputmap must be either adapt or gong (in lower case) and must match the value of SWTI_INPUT_MAP in swasti.ini
-
-        - YYYYMMDDHHmm must exactly match the value of SWTI_MAP_TIME specified in swasti.ini
+        - <inputmap> must be either adapt or gong (in lower case) and must match the value of SWTI_INPUT_MAP in swasti.ini  
+        - <YYYYMMDDHHmm> must exactly match the value of SWTI_MAP_TIME specified in swasti.ini  
+        - <extension> is fits for GONG and fts for ADAPT
 
     If the date and time in the map filename do not match *SWTI_INPUT_MAP* AND *SWTI_MAP_TIME*, SWASTi will ignore the local map file and attempt to download the required map automatically.
 
