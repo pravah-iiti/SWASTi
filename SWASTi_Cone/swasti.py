@@ -193,7 +193,7 @@ class swasti:
             
     	    adaptCR_year_ = given_date_.year
     	    self.CR_time_ = given_date_.strftime("%Y%m%d%H%M") 
-    	    self.mg_fname = f'gong_{self.CR_time_}.fts.gz'
+    	    self.mg_fname = f'gong_{self.CR_time_}.fits.gz'
     	    
     	    if os.path.exists(self.mg_fname):
     	        print(f"The magnetogram file {self.mg_fname} already exists and will be used for processing")
