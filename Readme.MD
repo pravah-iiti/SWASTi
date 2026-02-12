@@ -87,7 +87,7 @@ To set up SWASTi, follow these steps to prepare the environment:
     
     If you want to provide your own map, place the map file in the same directory as swasti.ini. The map file must follow the naming convention:
 
-    <inputmap>_<YYYYMMDDHHmm>.<extension>.gz
+    `<inputmap>_<YYYYMMDDHHmm>.<extension>.gz`
 
     where:
 
