@@ -46,7 +46,9 @@ if [ -f swasti.ini ]; then
                 echo "Step 8 : SWASTi MHD Run completed"
             else
                 echo "Step 8 : SWASTi MHD run aborted with exit code $status"
+                sleep 10
                 exit 1
+
             fi
         
             echo "-----------------------------------------------------------------"
@@ -56,13 +58,15 @@ if [ -f swasti.ini ]; then
         
             if [ $status -ne 0 ]; then
                 echo "Step 9 : Visualization failed with error code $status"
+                sleep 10
                 exit 1
             else
                 echo "Step 9 : Visualization SWASTi MHD results completed"
+                echo "-----------------------------------------------------------------"
             fi
 
-            echo "Copying data and sleep for 2 minutes"
-            sleep 120
+            echo "Copying data."
+            sleep 10
             echo "SWASTi simulation completed"
             echo "-----------------------------------------------------------------"
             exit 0
@@ -70,14 +74,15 @@ if [ -f swasti.ini ]; then
         else
             echo "pluto.ini not found"
             echo "!SWASTi simulation exited"
+            sleep 10
             echo "-----------------------------------------------------------------"
             exit 1
         fi
     else
         echo "NO MHD run selected"
+        echo "Copying data."
+        sleep 10
         echo "SWASTi simulation completed"
-        echo "Copying data and sleep for 2 minutes"
-        sleep 120
         echo "-----------------------------------------------------------------"
         exit 0
 
