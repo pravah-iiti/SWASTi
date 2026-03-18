@@ -5,7 +5,7 @@
 #define  COOLING                        NO
 #define  RECONSTRUCTION                 LINEAR
 #define  TIME_STEPPING                  RK2
-#define  NTRACER                        5
+#define  NTRACER                        1
 #define  PARTICLES                      NO
 #define  USER_DEF_PARAMETERS            10
 

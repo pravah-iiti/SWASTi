@@ -104,7 +104,8 @@ To set up SWASTi, follow these steps to prepare the environment:
 
     This creates a container named `SWASTi_Run_{TIME}` where TIME is the start time of the script execution and runs SWASTi inside it. The active container details can be checked with the command `docker ps`.
     
-    The SWASTi run log file is available in the main directory. If `SWTI_RUN_MHD = YES`, the corresponding MHD log file will be available in the `outputs` directory.
+    The SWASTi run log file is available in the simulation's output directory. If `SWTI_RUN_MHD = YES`, the corresponding MHD log file will also be saved there. *(See the [Results & Analysis](#-results--analysis) section below for the exact directory name).*
+    
 
 3. **Copy files from the Docker container**
 
@@ -129,6 +130,8 @@ To set up SWASTi, follow these steps to prepare the environment:
 
 <br>
 
+The start and end times of the simulation are the same as those of the input map used. These timestamps are also recorded in the SWASTi log file (`swasti_run.log`) as `MAP STARTING TIME` and `MAP ENDING TIME`.
+
 The SWASTi simulation domain extends up to 2.1 AU in the radial direction.  
 
 The spatial extent of the MHD simulation domain is as follows:
@@ -140,6 +143,15 @@ When the MHD simulation is enabled:
 
 3D MHD output files are generated with a time cadence of 6.648 hours.  
 Plasma parameters extracted at the L1 point are saved with a cadence of 5 minutes in the file `PlasmaParam_L1_YYYYMMDDHHmm.dat`.
+
+Technically, the SWASTi simulation executes in two phases, spanning two Carrington Rotations (CR):
+
+1. **Preconditioning Phase:** The initial CR is run to establish the background solar wind, generating the first ~100 VTK files.
+2. **Simulation Phase:** The subsequent CR runs the actual simulation, generating the next ~100 VTK files.
+
+**Storage Requirements:**
+* **If MHD is `YES`:** The simulation generates a total of ~200 VTK files, each weighing around 100MB. These can be used for 3D visualizations by the user. **You will need approximately 25GB of available disk space.** * *Important Note:* This space will be consumed by the Docker image, which typically resides in your system's root folder. Please ensure your root partition has adequate capacity before starting the run.
+* **If MHD is `NO`:** The disk usage is typically only a few MBs.
 
 <br>
 
@@ -182,7 +194,7 @@ SWASTi_outputs_YYYYMMDDTHHmm/
 <br>
 
 ### `HuX_result.out`
-Contains the solar wind parameters obtained from the HUX model run.
+Contains the solar wind parameters at 1 AU obtained from the HUX model run.
 
 **Columns:** 
 - Time [ $\rm{UTC}$ ]
@@ -191,7 +203,7 @@ Contains the solar wind parameters obtained from the HUX model run.
 <br>
 
 ### `PlasmaParam_L1_YYYYMMDDHHmm.dat`
-Contains plasma parameters at L1 extracted from the MHD simulation.
+Contains plasma parameters at 1 AU extracted from the MHD simulation.
 
 **Columns:** 
 - t [ $\rm{sec}$ ] Time since the Start Time as noted in the header
@@ -243,12 +255,35 @@ in the **Meridional plane**, passing through Earth ($\rm{r}-\theta \ \rm{plane}$
 ### `swasti_mhd.log`
 Log file for the PLUTO MHD simulation, including solver status and runtime information.
 
+A sample `swasti_mhd.log` file for a successful run is available in Github/SampleLogs directory for reference.
+
 ⚠️The file is generated only if *SWTI_RUN_MHD* = *YES*.
+
+
 
 <br>
 
 ### `swasti_run.log`
 Main SWASTi execution log, recording configuration parsing, model execution steps, and workflow status.
+
+A sample `swasti_run.log` file for a successful run is available in Github/SampleLogs directory for reference.
+
+<br>
+
+### [Optional] `VTK Files`
+
+MHD simulations produce VTK files containing 3D plasma properties (velocity, magnetic field, density etc.). 
+
+You can extract these files from the Docker container to your local machine using the following command:
+
+`docker cp <container_name>:/app/swasti_run/ <local_destination>`
+
+#### Visualization & Analysis
+To visualize the simulation results and perform further analysis, you can use standard visualization tools such as **[VisIt](https://visit-dav.github.io/visit-website/)**, **[ParaView](https://www.paraview.org/)**, **[PyPLUTO](https://pypluto.readthedocs.io/)**, or any other compatible software.
+
+> **Note:** Some programs, such as PyPLUTO, may require the `vtk.out` and `grid.out` files to properly load the data. These are available in the same output folder.
+
+⚠️These files are generated only if *SWTI_RUN_MHD* = *YES*.
 
 
 <br>
@@ -430,6 +465,27 @@ Although SWASTi allows latitude inputs between −90° and 90°, the simulation 
 **Description:** CME injection time at **21.5 solar radii** 
 
 <br>
+
+---
+## Common Issues & Debugging Guide
+**Before troubleshooting**, ensure you are using the latest Docker image by running:
+`docker pull pravahiiti/swasti:latest`
+
+If the simulation stops at any of the following steps (as indicated in your `swasti_run.log` file), please perform the associated checks. 
+### Step 1: 
+*   **Manual Map Placement:** Check the map file name and path if you placed the file manually.
+*   **Map Download:** Check your internet connectivity if the map is set to download automatically.
+*   **Start Time:** Ensure the map start time is provided in the correct format and that the map exists at the specified path.
+*   **Map Length:** Check the length of the map to confirm it is 1 CR.
+
+### Step 8:
+*   **Silent Crashes:** In case the MHD run crashes without producing a `swasti_mhd.log` file, try reducing the `SWTI_NPROCS` variable.
+*   **Mid-run Crashes:** If the MHD simulation crashes in the middle of a run, check your system's available storage space.
+
+### Step 9: 
+*   **Memory Issues:** If the visualization step crashes, it is usually due to inadequate memory. The visualization process requires approximately **8 GB of RAM**. 
+*   *Note: Even if visualization fails, the MHD outputs are still preserved and can be extracted using the `docker cp` command mentioned in the sections above.*
+
 
 ---
 
