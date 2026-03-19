@@ -37,3 +37,10 @@ jobs:
           file: ./SWASTi_Cone/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+
+      - name: Update Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: pravahiiti
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          repository: pravahiiti/${{ env.IMAGE_NAME }}
