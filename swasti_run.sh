@@ -34,7 +34,7 @@ cleanup() {
 
 trap cleanup INT TERM
 
-MAPTIME_RAW=$(awk -F': *' '/^SWTI_MAP_TIME/ {print $2}' swasti.ini | tr -d '\r' | xargs)
+MAPTIME_RAW=$(sed -n 's/^SWTI_MAP_TIME: *//p' swasti.ini | tr -d '\r' | xargs)
 MAPTIME=$(date -d "$MAPTIME_RAW" +"%Y%m%dT%H%M")
 RUN_MHD=$(awk -F': *' '/^SWTI_RUN_MHD/ {print $2}' swasti.ini | tr -d '\r' | xargs)
 
@@ -107,7 +107,7 @@ monitor_SWASTi_results() {
         sleep 5
     done
     docker cp "$swasti_container:/app/swasti_run/SWASTi_Results/." "$output_dir/" >/dev/null 2>&1
-    echo "Copied SWASTi MHD results to $output_dir/" >> "$output_dir/swasti_run.log" 2>&1
+    echo "Copied SWASTi MHD results to $output_dir/"
 }
 
 if [ "${RUN_MHD}" = "YES" ]; then 

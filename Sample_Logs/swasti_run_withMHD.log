@@ -1,0 +1,51 @@
+-----------------------------------------------------------------
+          ███████╗██╗    ██╗ █████╗ ███████╗████████╗ ██         
+          ██╔════╝██║    ██║██╔══██╗██╔════╝╚══██╔══╝            
+          ███████╗██║ █╗ ██║███████║███████╗   ██║    ██         
+          ╚════██║██║███╗██║██╔══██║╚════██║   ██║    ██         
+          ███████║╚███╔███╔╝██║  ██║███████║   ██║    ██         
+          ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝   ╚═╝               
+-----------------------------------------------------------------
+                   Starting SWASTi Computation...
+-----------------------------------------------------------------
+UTC time: 2026-03-18 19:56:06
+-----------------------------------------------------------------
+Step 1: Adding Input Magnetogram [ADAPT] ... ... ...
+Downloaded the magnetogram from: adapt41311_044012_202503180600_i00005600n1.fts.gz
+Map Starting Time :  2025-03-04 14:57:51.758
+Map Ending Time :  2025-03-31 20:35:55.812
+Map Mid Time: 2025-03-18 05:53:20.582
+Step 1 : Adding Input Magnetogram Done - Time Taken : 21s
+-----------------------------------------------------------------
+Step 2 : Tracing fieldlines ... ... ...
+Step 2 : Tracing fieldlines Done - Time Taken : 72s
+-----------------------------------------------------------------
+Step 3 : Classifying fieldlines ... ... ...
+Number of Open fieldlines : 64191
+Number of Closed fieldlines : 52356
+Step 3: Classifying fieldlines Done - Time taken: 108s
+-----------------------------------------------------------------
+Step 4 : Computing WSA parameters ... ... ...
+Step 4 : Computed WSA paramters Done - Time Taken: 191.28s
+-----------------------------------------------------------------
+Step 5 : Computing 2D Velocity and B fields ... ... ...
+Step 5 : Computed 2D Velocity and B fields Done - Time Taken: 7.88s
+-----------------------------------------------------------------
+Step 6 : Computing HuX Velocity ... ... ...
+Step 6 : Computed HuX Velocity Done - Time Taken: 0.43s
+-----------------------------------------------------------------
+Step 7 : Creating MHD Input Files ... ... ...
+Step 7 : Created MHD Input Files Done - Time Taken:75.58s
+-----------------------------------------------------------------
+Step 8 : Starting SWASTi MHD Run with 8 processors
+MHD log data in swasti_mhd.log
+Step 8 : SWASTi MHD Run completed
+-----------------------------------------------------------------
+Step 9 : Visualizing SWASTi MHD results
+PyPLUTO version: 1.1.1   session: Standard Python interpreter
+SWASTI_MHD_rphi.gif and SWASTI_MHD_rtheta.gif saved
+Analysis.png saved
+Step 9 : Visualization SWASTi MHD results completed
+-----------------------------------------------------------------
+SWASTi simulation completed
+-----------------------------------------------------------------

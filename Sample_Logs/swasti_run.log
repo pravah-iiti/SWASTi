@@ -1,0 +1,39 @@
+-----------------------------------------------------------------
+          ███████╗██╗    ██╗ █████╗ ███████╗████████╗ ██         
+          ██╔════╝██║    ██║██╔══██╗██╔════╝╚══██╔══╝            
+          ███████╗██║ █╗ ██║███████║███████╗   ██║    ██         
+          ╚════██║██║███╗██║██╔══██║╚════██║   ██║    ██         
+          ███████║╚███╔███╔╝██║  ██║███████║   ██║    ██         
+          ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝   ╚═╝               
+-----------------------------------------------------------------
+                   Starting SWASTi Computation...
+-----------------------------------------------------------------
+UTC time: 2026-03-18 19:55:48
+-----------------------------------------------------------------
+Step 1: Adding Input Magnetogram [ADAPT] ... ... ...
+Downloaded the magnetogram from: adapt41311_044012_202403180600_i00005600n1.fts.gz
+Map Starting Time :  2024-03-04 14:14:05.545
+Map Ending Time :  2024-03-31 21:19:39.499
+Map Mid Time: 2024-03-18 05:54:02.849
+Step 1 : Adding Input Magnetogram Done - Time Taken : 16s
+-----------------------------------------------------------------
+Step 2 : Tracing fieldlines ... ... ...
+Step 2 : Tracing fieldlines Done - Time Taken : 22s
+-----------------------------------------------------------------
+Step 3 : Classifying fieldlines ... ... ...
+Number of Open fieldlines : 64056
+Number of Closed fieldlines : 55512
+Step 3: Classifying fieldlines Done - Time taken: 142s
+-----------------------------------------------------------------
+Step 4 : Computing WSA parameters ... ... ...
+Step 4 : Computed WSA paramters Done - Time Taken: 206.98s
+-----------------------------------------------------------------
+Step 5 : Computing 2D Velocity and B fields ... ... ...
+Step 5 : Computed 2D Velocity and B fields Done - Time Taken: 8.21s
+-----------------------------------------------------------------
+Step 6 : Computing HuX Velocity ... ... ...
+Step 6 : Computed HuX Velocity Done - Time Taken: 0.44s
+-----------------------------------------------------------------
+NO MHD run selected
+SWASTi simulation completed
+-----------------------------------------------------------------

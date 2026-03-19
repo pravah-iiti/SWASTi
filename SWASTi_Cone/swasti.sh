@@ -65,7 +65,6 @@ if [ -f swasti.ini ]; then
                 echo "-----------------------------------------------------------------"
             fi
 
-            echo "Copying data."
             sleep 10
             echo "SWASTi simulation completed"
             echo "-----------------------------------------------------------------"
@@ -80,7 +79,6 @@ if [ -f swasti.ini ]; then
         fi
     else
         echo "NO MHD run selected"
-        echo "Copying data."
         sleep 10
         echo "SWASTi simulation completed"
         echo "-----------------------------------------------------------------"
