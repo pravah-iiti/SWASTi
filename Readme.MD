@@ -255,7 +255,7 @@ in the **Meridional plane**, passing through Earth ($\rm{r}-\theta \ \rm{plane}$
 ### `swasti_mhd.log`
 Log file for the PLUTO MHD simulation, including solver status and runtime information.
 
-A sample `swasti_mhd.log` file for a successful run is available in Github/SampleLogs directory for reference.
+A sample `swasti_mhd.log` file for a successful run is available in Github/Sample_Logs directory for reference.
 
 ⚠️The file is generated only if *SWTI_RUN_MHD* = *YES*.
 
@@ -266,7 +266,7 @@ A sample `swasti_mhd.log` file for a successful run is available in Github/Sampl
 ### `swasti_run.log`
 Main SWASTi execution log, recording configuration parsing, model execution steps, and workflow status.
 
-A sample `swasti_run.log` file for a successful run is available in Github/SampleLogs directory for reference.
+A sample `swasti_run.log` file for a successful run is available in Github/Sample_Logs directory for reference.
 
 <br>
 
